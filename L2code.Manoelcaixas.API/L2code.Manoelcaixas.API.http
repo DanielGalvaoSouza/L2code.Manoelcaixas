@@ -1,0 +1,6 @@
+@L2code.Manoelcaixas.API_HostAddress = http://localhost:5276
+
+GET {{L2code.Manoelcaixas.API_HostAddress}}/weatherforecast/
+Accept: application/json
+
+###
