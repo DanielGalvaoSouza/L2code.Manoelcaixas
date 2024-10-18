@@ -1,0 +1,175 @@
+{
+	"info": {
+		"_postman_id": "a1904824-2666-476a-b7c9-2157a1f67272",
+		"name": "API Manoel Caixas",
+		"description": "# 🚀 Get started here\n\nThis template guides you through CRUD operations (GET, POST, PUT, DELETE), variables, and tests.\n\n## 🔖 **How to use this template**\n\n#### **Step 1: Send requests**\n\nRESTful APIs allow you to perform CRUD operations using the POST, GET, PUT, and DELETE HTTP methods.\n\nThis collection contains each of these [request](https://learning.postman.com/docs/sending-requests/requests/) types. Open each request and click \"Send\" to see what happens.\n\n#### **Step 2: View responses**\n\nObserve the response tab for status code (200 OK), response time, and size.\n\n#### **Step 3: Send new Body data**\n\nUpdate or add new data in \"Body\" in the POST request. Typically, Body data is also used in PUT request.\n\n```\n{\n    \"name\": \"Add your name in the body\"\n}\n\n ```\n\n#### **Step 4: Update the variable**\n\nVariables enable you to store and reuse values in Postman. We have created a [variable](https://learning.postman.com/docs/sending-requests/variables/) called `base_url` with the sample request [https://postman-api-learner.glitch.me](https://postman-api-learner.glitch.me). Replace it with your API endpoint to customize this collection.\n\n#### **Step 5: Add tests in the \"Scripts\" tab**\n\nAdding tests to your requests can help you confirm that your API is working as expected. You can write test scripts in JavaScript and view the output in the \"Test Results\" tab.\n\n<img src=\"https://content.pstmn.io/fa30ea0a-373d-4545-a668-e7b283cca343/aW1hZ2UucG5n\" alt=\"\" height=\"1530\" width=\"2162\">\n\n## 💪 Pro tips\n\n- Use folders to group related requests and organize the collection.\n    \n- Add more [scripts](https://learning.postman.com/docs/writing-scripts/intro-to-scripts/) to verify if the API works as expected and execute workflows.\n    \n\n## 💡Related templates\n\n[API testing basics](https://go.postman.co/redirect/workspace?type=personal&collectionTemplateId=e9a37a28-055b-49cd-8c7e-97494a21eb54&sourceTemplateId=ddb19591-3097-41cf-82af-c84273e56719)  \n[API documentation](https://go.postman.co/redirect/workspace?type=personal&collectionTemplateId=e9c28f47-1253-44af-a2f3-20dce4da1f18&sourceTemplateId=ddb19591-3097-41cf-82af-c84273e56719)  \n[Authorization methods](https://go.postman.co/redirect/workspace?type=personal&collectionTemplateId=31a9a6ed-4cdf-4ced-984c-d12c9aec1c27&sourceTemplateId=ddb19591-3097-41cf-82af-c84273e56719)",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+		"_exporter_id": "12830203"
+	},
+	"item": [
+		{
+			"name": "Packaging Orders",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"exec": [
+							"pm.test(\"Status code is 200\", function () {",
+							"    pm.response.to.have.status(200);",
+							"});"
+						],
+						"type": "text/javascript",
+						"packages": {}
+					}
+				}
+			],
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"key": "accept",
+						"value": "text/plain"
+					},
+					{
+						"key": "Authorization",
+						"value": "Bearer {{TokenMonoelCaixasAPI}}"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "\r\n{\r\n    \"pedidos\": [\r\n      {\r\n        \"pedido_id\": 1,\r\n        \"produtos\": [\r\n          {\"produto_id\": \"PS5\", \"dimensoes\": {\"altura\": 40, \"largura\": 10, \"comprimento\": 25}},\r\n          {\"produto_id\": \"XBOX Series X\", \"dimensoes\": {\"altura\": 40, \"largura\": 10, \"comprimento\": 25}},\r\n          {\"produto_id\": \"XBOX Series S\", \"dimensoes\": {\"altura\": 40, \"largura\": 10, \"comprimento\": 25}},\r\n          {\"produto_id\": \"XBOX One\", \"dimensoes\": {\"altura\": 40, \"largura\": 10, \"comprimento\": 25}},\r\n          {\"produto_id\": \"Volante\", \"dimensoes\": {\"altura\": 40, \"largura\": 30, \"comprimento\": 30}},\r\n          {\"produto_id\": \"Pistola\", \"dimensoes\": {\"altura\": 40, \"largura\": 30, \"comprimento\": 30}},\r\n          {\"produto_id\": \"Óculos Meta Verso\", \"dimensoes\": {\"altura\": 40, \"largura\": 30, \"comprimento\": 30}},\r\n          {\"produto_id\": \"Metal Gear Solid\", \"dimensoes\": {\"altura\": 15, \"largura\": 20, \"comprimento\": 10}},\r\n          {\"produto_id\": \"Fifa 25\", \"dimensoes\": {\"altura\": 15, \"largura\": 20, \"comprimento\": 10}},\r\n          {\"produto_id\": \"Lol\", \"dimensoes\": {\"altura\": 15, \"largura\": 20, \"comprimento\": 10}},\r\n          {\"produto_id\": \"Tomp Raider\", \"dimensoes\": {\"altura\": 15, \"largura\": 20, \"comprimento\": 10}}\r\n        ]\r\n      },\r\n      {\r\n        \"pedido_id\": 2,\r\n        \"produtos\": [\r\n          {\"produto_id\": \"Joystick\", \"dimensoes\": {\"altura\": 15, \"largura\": 20, \"comprimento\": 10}},\r\n          {\"produto_id\": \"Fifa 24\", \"dimensoes\": {\"altura\": 10, \"largura\": 30, \"comprimento\": 10}},\r\n          {\"produto_id\": \"Call of Duty\", \"dimensoes\": {\"altura\": 30, \"largura\": 15, \"comprimento\": 10}}\r\n        ]\r\n      },\r\n      {\r\n        \"pedido_id\": 3,\r\n        \"produtos\": [\r\n          {\"produto_id\": \"Headset\", \"dimensoes\": {\"altura\": 25, \"largura\": 15, \"comprimento\": 20}}\r\n        ]\r\n      },\r\n      {\r\n        \"pedido_id\": 4,\r\n        \"produtos\": [\r\n          {\"produto_id\": \"Mouse Gamer\", \"dimensoes\": {\"altura\": 5, \"largura\": 8, \"comprimento\": 12}},\r\n          {\"produto_id\": \"Teclado Mecânico\", \"dimensoes\": {\"altura\": 4, \"largura\": 45, \"comprimento\": 15}}\r\n        ]\r\n      },\r\n      {\r\n        \"pedido_id\": 5,\r\n        \"produtos\": [\r\n          {\"produto_id\": \"Cadeira Gamer\", \"dimensoes\": {\"altura\": 120, \"largura\": 60, \"comprimento\": 70}}\r\n        ]\r\n      },\r\n      {\r\n        \"pedido_id\": 6,\r\n        \"produtos\": [\r\n          {\"produto_id\": \"Webcam\", \"dimensoes\": {\"altura\": 7, \"largura\": 10, \"comprimento\": 5}},\r\n          {\"produto_id\": \"Microfone\", \"dimensoes\": {\"altura\": 25, \"largura\": 10, \"comprimento\": 10}},\r\n          {\"produto_id\": \"Monitor\", \"dimensoes\": {\"altura\": 50, \"largura\": 60, \"comprimento\": 20}},\r\n          {\"produto_id\": \"Notebook\", \"dimensoes\": {\"altura\": 2, \"largura\": 35, \"comprimento\": 25}}\r\n        ]\r\n      },\r\n      {\r\n        \"pedido_id\": 7,\r\n        \"produtos\": [\r\n          {\"produto_id\": \"Jogo de Cabos\", \"dimensoes\": {\"altura\": 5, \"largura\": 15, \"comprimento\": 10}}\r\n        ]\r\n      },\r\n      {\r\n        \"pedido_id\": 8,\r\n        \"produtos\": [\r\n          {\"produto_id\": \"Controle Xbox\", \"dimensoes\": {\"altura\": 10, \"largura\": 15, \"comprimento\": 10}},\r\n          {\"produto_id\": \"Carregador\", \"dimensoes\": {\"altura\": 3, \"largura\": 8, \"comprimento\": 8}}\r\n        ]\r\n      },\r\n      {\r\n        \"pedido_id\": 9,\r\n        \"produtos\": [\r\n          {\"produto_id\": \"Tablet\", \"dimensoes\": {\"altura\": 1, \"largura\": 25, \"comprimento\": 17}}\r\n        ]\r\n      },\r\n      {\r\n        \"pedido_id\": 10,\r\n        \"produtos\": [\r\n          {\"produto_id\": \"HD Externo\", \"dimensoes\": {\"altura\": 2, \"largura\": 8, \"comprimento\": 12}},\r\n          {\"produto_id\": \"Pendrive\", \"dimensoes\": {\"altura\": 1, \"largura\": 2, \"comprimento\": 5}}\r\n        ]\r\n      },\r\n      {\r\n        \"pedido_id\": 11,\r\n        \"produtos\": [\r\n            {\r\n                \"produto_id\": \"PRD-9410\",\r\n                \"dimensoes\": {\r\n                    \"altura\": 46,\r\n                    \"largura\": 20,\r\n                    \"comprimento\": 31\r\n                }\r\n            },\r\n            {\r\n                \"produto_id\": \"PRD-8052\",\r\n                \"dimensoes\": {\r\n                    \"altura\": 32,\r\n                    \"largura\": 39,\r\n                    \"comprimento\": 21\r\n                }\r\n            },\r\n            {\r\n                \"produto_id\": \"PRD-4150\",\r\n                \"dimensoes\": {\r\n                    \"altura\": 45,\r\n                    \"largura\": 33,\r\n                    \"comprimento\": 13\r\n                }\r\n            },\r\n            {\r\n                \"produto_id\": \"PRD-5309\",\r\n                \"dimensoes\": {\r\n                    \"altura\": 20,\r\n                    \"largura\": 38,\r\n                    \"comprimento\": 13\r\n                }\r\n            },\r\n            {\r\n                \"produto_id\": \"PRD-7622\",\r\n                \"dimensoes\": {\r\n                    \"altura\": 15,\r\n                    \"largura\": 35,\r\n                    \"comprimento\": 33\r\n                }\r\n            },\r\n            {\r\n                \"produto_id\": \"PRD-5644\",\r\n                \"dimensoes\": {\r\n                    \"altura\": 41,\r\n                    \"largura\": 28,\r\n                    \"comprimento\": 16\r\n                }\r\n            },\r\n            {\r\n                \"produto_id\": \"PRD-2279\",\r\n                \"dimensoes\": {\r\n                    \"altura\": 39,\r\n                    \"largura\": 39,\r\n                    \"comprimento\": 19\r\n                }\r\n            },\r\n            {\r\n                \"produto_id\": \"PRD-5623\",\r\n                \"dimensoes\": {\r\n                    \"altura\": 48,\r\n                    \"largura\": 11,\r\n                    \"comprimento\": 13\r\n                }\r\n            },\r\n            {\r\n                \"produto_id\": \"PRD-7605\",\r\n                \"dimensoes\": {\r\n                    \"altura\": 35,\r\n                    \"largura\": 10,\r\n                    \"comprimento\": 29\r\n                }\r\n            },\r\n            {\r\n                \"produto_id\": \"PRD-9041\",\r\n                \"dimensoes\": {\r\n                    \"altura\": 30,\r\n                    \"largura\": 28,\r\n                    \"comprimento\": 25\r\n                }\r\n            },\r\n            {\r\n                \"produto_id\": \"PRD-8539\",\r\n                \"dimensoes\": {\r\n                    \"altura\": 36,\r\n                    \"largura\": 33,\r\n                    \"comprimento\": 25\r\n                }\r\n            },\r\n            {\r\n                \"produto_id\": \"PRD-1291\",\r\n                \"dimensoes\": {\r\n                    \"altura\": 24,\r\n                    \"largura\": 38,\r\n                    \"comprimento\": 28\r\n                }\r\n            },\r\n            {\r\n                \"produto_id\": \"PRD-4163\",\r\n                \"dimensoes\": {\r\n                    \"altura\": 49,\r\n                    \"largura\": 15,\r\n                    \"comprimento\": 29\r\n                }\r\n            },\r\n            {\r\n                \"produto_id\": \"PRD-7173\",\r\n                \"dimensoes\": {\r\n                    \"altura\": 40,\r\n                    \"largura\": 28,\r\n                    \"comprimento\": 33\r\n                }\r\n            },\r\n            {\r\n                \"produto_id\": \"PRD-6583\",\r\n                \"dimensoes\": {\r\n                    \"altura\": 46,\r\n                    \"largura\": 16,\r\n                    \"comprimento\": 33\r\n                }\r\n            }\r\n        ]\r\n      }\r\n    ]\r\n  }",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:32772/api/Packaging",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "32772",
+					"path": [
+						"api",
+						"Packaging"
+					]
+				},
+				"description": "This is a GET request and it is used to \"get\" data from an endpoint. There is no request body for a GET request, but you can use query parameters to help specify the resource you want data on (e.g., in this request, we have `id=1`).\n\nA successful GET response will have a `200 OK` status, and should include some kind of response body - for example, HTML web content or JSON data."
+			},
+			"response": []
+		},
+		{
+			"name": "Get Token To Authorization",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"exec": [
+							"pm.test(\"Status code is 200\", function () {\r",
+							"    pm.response.to.have.status(200);\r",
+							"});\r",
+							"\r",
+							"// Extrair o valor do token do JSON de resposta\r",
+							"var jsonData = pm.response.json();\r",
+							"var token = jsonData.token;\r",
+							"\r",
+							"// Armazenar o valor do token em uma variável global\r",
+							"pm.globals.set(\"TokenManoelCaixasAPI\", token);"
+						],
+						"type": "text/javascript",
+						"packages": {}
+					}
+				}
+			],
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n  \"userName\": \"string\",\r\n  \"password\": \"string\"\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "https://localhost:32772/api/Auth/token",
+					"protocol": "https",
+					"host": [
+						"localhost"
+					],
+					"port": "32772",
+					"path": [
+						"api",
+						"Auth",
+						"token"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Revoke Token Authorization",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n  \"token\": \"{{TokenMonoelCaixasAPI}}\"\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "https://localhost:32769/api/Auth/revoke",
+					"protocol": "https",
+					"host": [
+						"localhost"
+					],
+					"port": "32769",
+					"path": [
+						"api",
+						"Auth",
+						"revoke"
+					]
+				}
+			},
+			"response": []
+		}
+	],
+	"event": [
+		{
+			"listen": "prerequest",
+			"script": {
+				"type": "text/javascript",
+				"exec": [
+					""
+				]
+			}
+		},
+		{
+			"listen": "test",
+			"script": {
+				"type": "text/javascript",
+				"exec": [
+					""
+				]
+			}
+		}
+	],
+	"variable": [
+		{
+			"key": "id",
+			"value": "1"
+		},
+		{
+			"key": "base_url",
+			"value": "https://postman-rest-api-learner.glitch.me/"
+		}
+	]
+}
