@@ -1,11 +1,12 @@
-﻿using Microsoft.IdentityModel.Tokens;
+﻿using L2code.Manoelcaixas.Application.Interfaces;
+using Microsoft.IdentityModel.Tokens;
 using System.IdentityModel.Tokens.Jwt;
 using System.Security.Claims;
 using System.Text;
 
 namespace L2code.Manoelcaixas.Application.Services.TokenServices
 {
-    public class TokenService
+    public class TokenService   : ITokenService
     {
         private readonly string _secretKey = string.Empty;
         private readonly string _issuer = string.Empty;

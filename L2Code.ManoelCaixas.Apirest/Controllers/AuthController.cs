@@ -1,4 +1,5 @@
-﻿using L2code.Manoelcaixas.Application.Services.TokenServices;
+﻿using L2code.Manoelcaixas.Application.Interfaces;
+using L2code.Manoelcaixas.Application.Services.TokenServices;
 using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Identity.Data;
 using Microsoft.AspNetCore.Mvc;
@@ -9,9 +10,9 @@ namespace L2code.Manoelcaixas.Apirest.Controllers
     [ApiController]
     public class AuthController : ControllerBase
     {
-        private readonly TokenService _tokenService;
+        private readonly ITokenService _tokenService;
 
-        public AuthController(TokenService tokenService)
+        public AuthController(ITokenService tokenService)
         {
             _tokenService = tokenService;
         }

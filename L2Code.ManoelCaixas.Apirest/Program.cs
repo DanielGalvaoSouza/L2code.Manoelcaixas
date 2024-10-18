@@ -18,33 +18,7 @@ var key = Encoding.ASCII.GetBytes(secretKey);
 //builder.Services.AddAuthentication(JwtBearerDefaults.AuthenticationScheme)
 //    .AddMicrosoftIdentityWebApi(builder.Configuration.GetSection("AzureAd"));
 
-builder.Services.AddAuthentication(JwtBearerDefaults.AuthenticationScheme)
-    .AddJwtBearer(options =>
-    {
-        options.TokenValidationParameters = new TokenValidationParameters
-        {
-            ValidateIssuer = true,
-            ValidateAudience = true,
-            ValidateLifetime = true,
-            ValidateIssuerSigningKey = true,
-            ValidIssuer = "yourIssuer",
-            ValidAudience = "yourAudience",
-            IssuerSigningKey = new SymmetricSecurityKey(key),
-            LifetimeValidator = (notBefore, expires, securityToken, validationParameters) =>
-            {
-                var jwtToken = securityToken as JsonWebToken;
-                if (jwtToken == null)
-                    return false;
 
-                var handler = new JwtSecurityTokenHandler();
-                string tokenString = jwtToken.EncodedToken;
-                var jwtSecurityToken = handler.ReadJwtToken(tokenString);
-
-                return !RevokedTokens.IsTokenRevoked(jwtSecurityToken.RawData) &&
-                       expires != null && expires > DateTime.UtcNow;
-            }
-        };
-    });
 
 // Add services to the container.
 
