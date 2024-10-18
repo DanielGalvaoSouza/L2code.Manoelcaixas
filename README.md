@@ -231,3 +231,5 @@ Tente o seguinte payload:
   }
   
 A aplicação deve retornar a validação do pedido, verificando em quas caixas os produtos devem ser acomodados.
+
+Caso queira utilizar o postman para fazer os testes no serviço configure a porta e o protocolo utilizado para conexão com o serviço e acione as actions "Get Token To Authorization" para buscar um token. Não é preciso autenticar com o token gerado, o script já criar uma variável global e configura o token para ser utilizados nas requisições dos serviços. Quando acionar a request "Packaging Orders" ele já vai identificar o token gerado. A request "Revoke Token Authorization" cancela o token gerado e impede as requisições com aquele token.  
