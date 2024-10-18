@@ -1,4 +1,4 @@
-﻿namespace L2code.Manoelcaixas.Apirest.TokenServices
+﻿namespace L2code.Manoelcaixas.Application.Services.TokenServices
 {
     public class RevokedTokens
     {

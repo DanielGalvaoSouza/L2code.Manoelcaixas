@@ -11,9 +11,9 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "L2code.Manoelcaixas.Domain"
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "L2code.Manoelcaixas.Infrastructure", "L2code.Manoelcaixas.Infrastructure\L2code.Manoelcaixas.Infrastructure.csproj", "{F4ACFBE4-B090-4537-8A42-C6D0AB8D6934}"
 EndProject
-Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "L2code.Manoelcaixas.XUnit", "L2code.Manoelcaixas.XUnit\L2code.Manoelcaixas.XUnit.csproj", "{FB6DB244-6E00-4DFC-9FA4-5A4383C6766F}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "L2Code.ManoelCaixas.Apirest", "L2Code.ManoelCaixas.Apirest\L2Code.ManoelCaixas.Apirest.csproj", "{57FD0531-16CA-4CB6-B7C3-109AABF18162}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "L2Code.ManoelCaixas.Apirest", "L2Code.ManoelCaixas.Apirest\L2Code.ManoelCaixas.Apirest.csproj", "{57FD0531-16CA-4CB6-B7C3-109AABF18162}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "L2code.Manoelcaixas.Tests", "L2code.Manoelcaixas.Tests\L2code.Manoelcaixas.Tests.csproj", "{093FEBD6-10DA-4A51-80A1-D0076815FABD}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -37,16 +37,19 @@ Global
 		{F4ACFBE4-B090-4537-8A42-C6D0AB8D6934}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{F4ACFBE4-B090-4537-8A42-C6D0AB8D6934}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{F4ACFBE4-B090-4537-8A42-C6D0AB8D6934}.Release|Any CPU.Build.0 = Release|Any CPU
-		{FB6DB244-6E00-4DFC-9FA4-5A4383C6766F}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
-		{FB6DB244-6E00-4DFC-9FA4-5A4383C6766F}.Debug|Any CPU.Build.0 = Debug|Any CPU
-		{FB6DB244-6E00-4DFC-9FA4-5A4383C6766F}.Release|Any CPU.ActiveCfg = Release|Any CPU
-		{FB6DB244-6E00-4DFC-9FA4-5A4383C6766F}.Release|Any CPU.Build.0 = Release|Any CPU
 		{57FD0531-16CA-4CB6-B7C3-109AABF18162}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
 		{57FD0531-16CA-4CB6-B7C3-109AABF18162}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{57FD0531-16CA-4CB6-B7C3-109AABF18162}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{57FD0531-16CA-4CB6-B7C3-109AABF18162}.Release|Any CPU.Build.0 = Release|Any CPU
+		{093FEBD6-10DA-4A51-80A1-D0076815FABD}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{093FEBD6-10DA-4A51-80A1-D0076815FABD}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{093FEBD6-10DA-4A51-80A1-D0076815FABD}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{093FEBD6-10DA-4A51-80A1-D0076815FABD}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {CB238884-264B-4579-AEDB-00131BFAD491}
 	EndGlobalSection
 EndGlobal

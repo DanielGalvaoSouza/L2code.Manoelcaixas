@@ -3,7 +3,7 @@ using System.IdentityModel.Tokens.Jwt;
 using System.Security.Claims;
 using System.Text;
 
-namespace L2code.Manoelcaixas.Apirest.TokenServices
+namespace L2code.Manoelcaixas.Application.Services.TokenServices
 {
     public class TokenService
     {
@@ -40,7 +40,7 @@ namespace L2code.Manoelcaixas.Apirest.TokenServices
         public void RevokeToken(string token)
         {
             RevokedTokens.RevokeToken(token);
-            
+
         }
     }
 }

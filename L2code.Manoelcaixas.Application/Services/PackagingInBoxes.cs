@@ -1,50 +1,15 @@
 ﻿using L2code.Manoelcaixas.Application.DTOs;
 using L2code.Manoelcaixas.Application.DTOs.OutputBoxes;
-using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 
 namespace L2code.Manoelcaixas.Application.Services
 {
     public class PackagingInBoxes
     {
-        //public PackagingFeedbackDTO Packaging(List<Packaging> pedidos)
-        //{
-        //    var resposta = new PackagingFeedbackDTO
-        //    {
-        //        Pedidos = new List<OrderFeedbackDTO>()
-        //    };
-
-        //    foreach (var pedido in pedidos)
-        //    {
-        //        var pedidoResposta = new OrderFeedbackDTO
-        //        {
-        //            PedidoId = pedido.PedidoId,
-        //            Caixas = new List<BoxesFeedbackDTO>()
-        //        };
-
-        //        // Aqui, implementaria a lógica de empacotamento dos produtos nas caixas disponíveis.
-        //        // Preenchendo as caixas com os produtos
-
-        //        resposta.Pedidos.Add(pedidoResposta);
-        //    }
-
-        //    return resposta;
-        //}
-
-        //public void ValidadeVolumeOfProduct(InputOrdersDTO caixasDTO)
-        //{
-        //    foreach (var orderItem in caixasDTO.Orders)
-        //    {
-        //        orderItem.Products
-        //    }
-        //}
-        //public void PossiblesBoxForProducts()
-        //{
-        //}
-
+        /// <summary>
+        ///     Validates the products by checking which boxes will be in order.
+        /// </summary>
+        /// <param name="caixasDTO"></param>
+        /// <returns>Order with your boxes and products</returns>
         public InputOrdersDTO ProductPackagingStrategy(InputOrdersDTO caixasDTO)
         {
             // Ordena produtos por volume decrescente
@@ -120,11 +85,17 @@ namespace L2code.Manoelcaixas.Application.Services
 
         }
 
+        /// <summary>
+        ///     Verify if product consider a small product
+        /// </summary>
+        /// <param name="product"></param>
+        /// <param name="box"></param>
+        /// <returns>true if consider a small product</returns>
         public bool IsSmallProduct(ProductsDTO product, Boxes? box)
         {
             // Definir um limite de "pequeno" como produtos que ocupam menos de 20% da caixa
             decimal boxVolume;
-            
+
             if (box != null)
             {
                 boxVolume = box.Dimensions.Volume;
@@ -133,26 +104,37 @@ namespace L2code.Manoelcaixas.Application.Services
             {
                 boxVolume = 0;
             }
-            
+
             decimal limitePequeno = boxVolume * Convert.ToDecimal(0.20);
 
             return product.Dimensions.Volume <= limitePequeno;
         }
 
+        /// <summary>
+        ///    
+        /// </summary>
+        /// <param name="products"></param>
+        /// <param name="box"></param>
+        /// <returns>true if fits in box</returns>
         public bool ProductFitsInBox(ProductsDTO products, DTOs.Boxes box)
         {
-            if(box == null)
+            if (box == null)
             {
                 return false;
             }
 
             return products.Dimensions.Height <= box.Dimensions.Height &&
                    products.Dimensions.Width <= box.Dimensions.Width &&
-                   products.Dimensions.Length <= box.Dimensions.Length && 
+                   products.Dimensions.Length <= box.Dimensions.Length &&
                    products.Dimensions.Volume <= box.Dimensions.Volume;
 
         }
 
+        /// <summary>
+        ///     Check which box is compatible with the volume of the product.
+        /// </summary>
+        /// <param name="produto"></param>
+        /// <returns>Instance of the object that allows the product packaging</returns>
         public DTOs.Boxes SelectBoxToPackaging(ProductsDTO produto)
         {
             // Lista de caixas disponíveis
@@ -175,5 +157,6 @@ namespace L2code.Manoelcaixas.Application.Services
             // Se não houver caixa onde o produto caiba
             return null;
         }
+
     }
 }

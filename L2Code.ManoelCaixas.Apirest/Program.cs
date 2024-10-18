@@ -4,7 +4,7 @@ using Microsoft.IdentityModel.Tokens;
 using System.Text;
 using System.IdentityModel.Tokens.Jwt;
 using Microsoft.IdentityModel.JsonWebTokens;
-using L2code.Manoelcaixas.Apirest.TokenServices;
+using L2code.Manoelcaixas.Application.Services.TokenServices;
 using Microsoft.OpenApi.Models;
 
 var builder = WebApplication.CreateBuilder(args);

@@ -1,4 +1,4 @@
-﻿using L2code.Manoelcaixas.Apirest.TokenServices;
+﻿using L2code.Manoelcaixas.Application.Services.TokenServices;
 using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Identity.Data;
 using Microsoft.AspNetCore.Mvc;
@@ -17,7 +17,7 @@ namespace L2code.Manoelcaixas.Apirest.Controllers
         }
 
         [HttpPost("token")]
-        public IActionResult GenerateToken([FromBody] L2code.Manoelcaixas.Apirest.TokenServices.LoginRequest request)
+        public IActionResult GenerateToken([FromBody] Application.Services.TokenServices.LoginRequest request)
         {
             if (request.UserName == "string" && request.Password == "string")
             {

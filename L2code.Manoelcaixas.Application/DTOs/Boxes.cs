@@ -1,11 +1,4 @@
-﻿using L2code.Manoelcaixas.Application.DTOs;
-using L2code.Manoelcaixas.Domain.Entity;
-using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Text.Json.Serialization;
-using System.Threading.Tasks;
+﻿using System.Text.Json.Serialization;
 
 namespace L2code.Manoelcaixas.Application.DTOs
 {
